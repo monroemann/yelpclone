@@ -1,7 +1,7 @@
 class PlacesController < ApplicationController
   
   def index
-    @places = Place.released.paginate(page: params[:page], per_page: 3)
+    @places = Place.paginate(page: params[:page], per_page: 3)
 
     #ALTERNATE METHOD.  DOES SAME THING:
     # @places = Place.paginate(:page => params[:page], :per_page => 3)
@@ -9,6 +9,17 @@ class PlacesController < ApplicationController
 
   def new
     @place=Place.new
+  end
+
+  def create
+      Place.create(place_params)
+      redirect_to root_path
+  end
+
+  private
+
+  def place_params
+    params.require(:place).permit(:name, :description, :address)
   end
 
 end
