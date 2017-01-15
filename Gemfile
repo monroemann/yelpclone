@@ -39,6 +39,9 @@ gem 'will_paginate', '~> 3.0'
 # Add simple_form gem
 gem 'simple_form'
 
+# Add the user authentication gem "devise"
+gem 'devise', '>= 3.2.4' 
+
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
