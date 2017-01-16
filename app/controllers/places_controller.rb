@@ -2,7 +2,7 @@ class PlacesController < ApplicationController
   before_action :authenticate_user!, only:[:new, :create]
   
   def index
-    @places = Place.paginate(page: params[:page], per_page: 3)
+    @places = Place.order("created_at ASC").all.paginate(page: params[:page], per_page: 3)
 
     #ALTERNATE METHOD.  DOES SAME THING:
     # @places = Place.paginate(:page => params[:page], :per_page => 3)
@@ -26,8 +26,8 @@ class PlacesController < ApplicationController
   end
 
   def update
-    @place = place.find(params[:id])
-    @place = update_attributes(place_params)
+    @place = Place.find(params[:id])
+    @place.update_attributes(place_params)
     redirect_to root_path
   end
 
