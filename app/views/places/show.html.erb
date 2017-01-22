@@ -31,10 +31,11 @@
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC7QTyhAQSqEkgT6MHN7wEwcbsIcA8tHCw&callback=initMap">
     </script>
 
+  <div id="map"></div>
 
   <% end %>
 
-  <div id="map"></div>
+
 
   <div class="pull-right">
     <% if current_user && current_user == @place.user %>
@@ -47,7 +48,7 @@
 
  <div class="clear"></div>
 
-<%= simple_form_for @comment, url: "#" do |f| %>
+<%= simple_form_for @comment, url: place_comments_path(@place) do |f| %>
   <%= f.input :message %>
   <%= f.input :rating %>
   <%= f.submit "Add a Comment", class: 'btn btn-primary' %>
