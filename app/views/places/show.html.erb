@@ -93,7 +93,12 @@
 </div> 
 
 
-<% @place.comments.each do |comment| %>
+<% @place.comments.each_with_index do |comment, index| %>
+
+    <% if index % 2 == 0 %>
+        <div class="clear"></div>
+    <% end %>
+
   <div class="col-xs-12 col-sm-6">
     <blockquote>
       <% if comment.humanized_rating.present? %>
