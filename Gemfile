@@ -52,6 +52,9 @@ gem "geocoder", "1.3.4"
 # Add Figaro gem to allow addition of ENV values
 gem "figaro", ">= 1.0.0"
 
+# Add CarrierWave gem to allow for photo uploads
+gem 'carrierwave', '~> 1.0'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
