@@ -116,6 +116,9 @@
     </blockquote>
   </div>
 
+<% end %>
+
+
 <!-- Modal ADD A PHOTO -->
 <div class="modal fade" id="myPhotoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -125,7 +128,7 @@
         <h4 class="modal-title" id="myModalLabel">Add a photo</h4>
       </div>
 
-      <%= simple_form_for @comment, url: place_photos_path(@place) do |f| %>
+      <%= simple_form_for @photo, url: place_photos_path(@place) do |f| %>
       <div class="modal-body">
 
     
@@ -149,8 +152,9 @@
   </div>
 </div> 
 
+<div class="clear"></div>
 
-
-
-
+<% @place.photos.each do |photo| %>
+  <%= image_tag photo.picture %>
+  <%= photo.caption %>
 <% end %>
