@@ -55,6 +55,9 @@ gem "figaro", ">= 1.0.0"
 # Add CarrierWave gem to allow for photo uploads
 gem 'carrierwave', '~> 1.0'
 
+# Add the Fog gem to allow Carrierwave to communicate with Amazon S3
+gem "fog"
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
