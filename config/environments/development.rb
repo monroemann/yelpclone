@@ -3,19 +3,22 @@ Rails.application.configure do
 
   
 
-  # Configure test email setup via gmail
+  # Configure test email setup via gmail, commented out = won't work
 
-  config.action_mailer.delivery_method = :smtp
+  # config.action_mailer.delivery_method = :smtp
 
-  config.action_mailer.smtp_settings = {
-    address: "smtp.gmail.com",
-    port: 587,
-    domain: "example.com",
-    authentication: "plain",
-    enable_starttls_auto: true,
-    user_name: ENV['GMAIL_ADDRESS'],
-    password: ENV['GMAIL_PASSWORD']
-  }
+  # config.action_mailer.smtp_settings = {
+  #   address: "smtp.gmail.com",
+  #   port: 587,
+  #   domain: "example.com",
+  #   authentication: "plain",
+  #   enable_starttls_auto: true,
+  #   user_name: ENV['GMAIL_ADDRESS'],
+  #   password: ENV['GMAIL_PASSWORD']
+  # }
+
+  # Enable this code to put the e-mailer into 'test mode' so it only logs rather than sends
+  config.action_mailer.delivery_method = :test
 
 
   # Setup default url options
