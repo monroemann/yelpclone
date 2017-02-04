@@ -6,7 +6,7 @@
   </div>
 
   <div class="col-xs-12 col-md-8">
-      <h1><%= @user.email %></h1>
+      <h3 class="email-size"><%= @user.email %></h3>
       <h3>Member Since: <%= @user.created_at.strftime("%B %d, %Y") %>  </h3>
       <h4><%= @user.comments.count %> total comments</h4>
       <h4><%= @user.comments.where(rating: '5_stars').count %> five-star comments</h4>
@@ -15,7 +15,7 @@
 </div>
 
 <br><br>
-<h1 class=”text-center”>My Comments</h1>
+<h1 class="text-center">My Comments</h1>
 <br><br>
 
 <% @user.comments.each do |comment| %>
